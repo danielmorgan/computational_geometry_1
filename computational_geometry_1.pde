@@ -14,10 +14,10 @@ void draw() {
   P.add(new PVector(8, 7));
   P.add(new PVector(4, 6));
   P.add(new PVector(5, 5));
-  //scalePoints(P);
 
-  ArrayList<PEdge> E = slowConvexHull(P);
+  ArrayList<Edge> E = slowConvexHull(P);
 
+  scalePoints(P);
   drawGrid(#dddddd);
   drawEdges(E, #ff7744);
   drawVertices(P, #ffffff, #3388ff);

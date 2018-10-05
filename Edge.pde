@@ -1,8 +1,8 @@
-class PEdge {
+class Edge {
   public PVector origin;
   public PVector destination;
 
-  public PEdge(PVector o, PVector d) {
+  public Edge(PVector o, PVector d) {
     origin = o;
     destination = d;
   }

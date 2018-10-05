@@ -1,5 +1,5 @@
-ArrayList<PEdge> slowConvexHull(ArrayList<PVector> P) {
-  ArrayList<PEdge> E = new ArrayList<PEdge>();
+ArrayList<Edge> slowConvexHull(ArrayList<PVector> P) {
+  ArrayList<Edge> E = new ArrayList<Edge>();
 
   for (int i = 0; i < P.size(); i++) {
     for (int j = 0; j < P.size(); j++) {
@@ -9,12 +9,11 @@ ArrayList<PEdge> slowConvexHull(ArrayList<PVector> P) {
       
       PVector p = P.get(i);
       PVector q = P.get(j);
-      PEdge e = new PEdge(p, q);
+      Edge e = new Edge(p, q);
 
       for (int k = 0; k < P.size(); k++) {
         if (i == k || j == k) continue;
-        
-        PVector r = new PVector(1, 3);
+        PVector r = P.get(k);
         
         if (!isRightOfOrOnEdge(e, r)) {
           valid = false;
@@ -22,18 +21,15 @@ ArrayList<PEdge> slowConvexHull(ArrayList<PVector> P) {
       }
       
       if (valid) {
-        println(e.origin.x, e.origin.y, ",", e.destination.x, e.destination.y);
         E.add(e);
       }
     }
   }
-
-  exit();
   
   return E;
 }
 
-boolean isRightOfOrOnEdge(PEdge e, PVector r) {
+boolean isRightOfOrOnEdge(Edge e, PVector r) {
   PVector p = e.origin;
   PVector q = e.destination;
 

@@ -12,14 +12,14 @@ void drawGrid(color c) {
 }
 
 
-void drawEdges(ArrayList<PEdge> E, color c) {
+void drawEdges(ArrayList<Edge> E, color c) {
   for (int i = 0; i < E.size(); i++) {
     drawEdge(E.get(i), c);
   }
 }
 
 
-void drawEdge(PEdge e, color c) {
+void drawEdge(Edge e, color c) {
   stroke(c);
   strokeWeight(2);
 
