@@ -1,5 +1,5 @@
-ArrayList<Edge> slowConvexHull(ArrayList<PVector> P) {
-  ArrayList<Edge> E = new ArrayList<Edge>();
+ConvexHull slowConvexHull(ArrayList<PVector> P) {
+  ConvexHull CH = new ConvexHull();
 
   for (int i = 0; i < P.size(); i++) {
     for (int j = 0; j < P.size(); j++) {
@@ -21,12 +21,12 @@ ArrayList<Edge> slowConvexHull(ArrayList<PVector> P) {
       }
       
       if (valid) {
-        E.add(e);
+        CH.addEdge(e);
       }
     }
   }
   
-  return E;
+  return CH;
 }
 
 boolean isRightOfOrOnEdge(Edge e, PVector r) {

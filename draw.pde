@@ -13,8 +13,8 @@ void drawGrid(color c) {
 
 
 void drawEdges(ArrayList<Edge> E, color c) {
-  for (int i = 0; i < E.size(); i++) {
-    drawEdge(E.get(i), c);
+  for (Edge e: E) {
+    drawEdge(e, c);
   }
 }
 
@@ -38,4 +38,9 @@ void drawVertices(ArrayList<PVector> P, color s, color f) {
     PVector p = P.get(i);
     ellipse(p.x, p.y, pointRadius, pointRadius);
   }
+}
+
+void drawConvexHull(ConvexHull CH) {
+  drawEdges(CH.edges, #ff0000);
+  drawVertices(CH.getPoints(), #ffffff, #ff8833);
 }

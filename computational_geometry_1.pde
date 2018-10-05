@@ -11,12 +11,10 @@ void setup() {
 
 void draw() {
   background(#ffffff);
-
-  ArrayList<Edge> E = slowConvexHull(P);
   
   drawGrid(#dddddd);
-  drawEdges(E, #ff7744);
   drawVertices(P, #ffffff, #3388ff);
+  drawConvexHull(slowConvexHull(P));
 }
 
 void mouseClicked() {
